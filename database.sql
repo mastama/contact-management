@@ -14,3 +14,16 @@ create table users(
 
 select * from users;
 desc users;
+
+create table contacts(
+    id varchar(100) not null ,
+    username varchar(100) not null ,
+    firstName varchar(100) not null ,
+    lastName varchar(100),
+    email varchar(100),
+    phone varchar(100),
+    primary key (id),
+    foreign key fk_users_contacts (username) references users (username)
+);
+
+desc contacts;

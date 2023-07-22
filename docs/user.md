@@ -84,7 +84,7 @@ ResponseBody (Failed):
 ````json
 {
   "responseCode": "03",
-  "responseDesc": "Error, Unauthorized!",
+  "responseDesc": "Unauthorized!",
   "data": {}
 }
 ````

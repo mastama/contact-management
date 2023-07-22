@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import teatech.contactmanagement.dto.RequestUserRegister;
 import teatech.contactmanagement.dto.WebResponse;
 import teatech.contactmanagement.service.UserService;
+import teatech.contactmanagement.util.Constant;
 
 @Slf4j
 @RestController
@@ -26,6 +27,9 @@ public class UserController {
         log.info("Start controller register: {}", req.getUsername());
         userService.register(req);
         log.info("End controller register: {}", req.getUsername());
-        return WebResponse.<String>builder().data("OK").build();
+        String responseCode = Constant.RESPONSE.APPROVED.getCode();
+        String responseDesc = Constant.RESPONSE.APPROVED.getDescription();
+//        return WebResponse.<String>builder().data("register success").build();
+        return new WebResponse<>(responseCode, responseDesc, "Registrasi berhasil! Akun Anda telah berhasil dibuat.");
     }
 }

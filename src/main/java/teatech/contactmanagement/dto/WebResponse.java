@@ -15,6 +15,7 @@ public class WebResponse <T>{
      * Menggunakan generic class
      * karena "data" yang digunakan berubah-ubah (bisa object, bisa string, bisa list, dll)
      */
+    private String responseCode;
+    private String responseDesc;
     private T data;
-    private String errors;
 }

@@ -24,4 +24,9 @@ public class RequestUserRegister {
     @NotBlank
     @Size(max = 100)
     private String name;
+
+    public RequestUserRegister(String username, String name) {
+        this.username = username;
+        this.name = name;
+    }
 }

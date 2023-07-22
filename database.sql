@@ -12,9 +12,11 @@ create table users(
                       UNIQUE (token)
 );
 
-select * from users;
-desc users;
+select * from tbl_users;
+desc tbl_users;
+alter table users rename to tbl_users;
 
+# ==============================================================
 create table contacts(
     id varchar(100) not null ,
     username varchar(100) not null ,
@@ -25,13 +27,16 @@ create table contacts(
     primary key (id),
     foreign key fk_users_contacts (username) references users (username)
 );
-select * from contacts;
-desc contacts;
+select * from tbl_contacts;
+desc tbl_contacts;
+
+alter table contacts rename to tbl_contacts;
 
 alter table contacts
 change column firstName first_name varchar(100) not null,
 change column lastName last_name varchar(100) ;
 
+# ==============================================================
 create table addresses(
     id varchar(100) not null ,
     contact_id varchar(100) not null ,
@@ -44,5 +49,6 @@ create table addresses(
     foreign key fk_contacts_addresses (contact_id) references contacts (id)
 );
 
-select * from addresses;
-desc addresses;
+alter table addresses rename to tbl_addresses;
+select * from tbl_addresses;
+desc tbl_addresses;

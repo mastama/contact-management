@@ -22,7 +22,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class UserControllerTest {
+class UserControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
@@ -31,7 +31,6 @@ public class UserControllerTest {
 
     @Autowired
     private ObjectMapper objectMapper;
-    private Object assertEquals;
 
     @BeforeEach
     void setUp() {
